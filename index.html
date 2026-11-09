@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A baby-blue scrapbook celebrating a year of favorite memories together.">
+    <meta name="theme-color" content="#f5eee3">
+    <title>Our Little Scrapbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="media.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="scrapbook">
+      <header class="intro">
+        <p class="eyebrow"><span aria-hidden="true">✦</span> A year of little moments <span aria-hidden="true">✦</span></p>
+        <h1>Our Little Scrapbook</h1>
+        <p class="subtitle">One year, so many favorite memories.</p>
+        <button class="music-button" id="music-button" type="button" aria-pressed="false">
+          <span class="music-icon" aria-hidden="true">♫</span>
+          <span id="music-button-label">Play our song</span>
+        </button>
+        <p class="music-status" id="music-status" role="status" aria-live="polite"></p>
+      </header>
+
+      <nav class="controls top-controls" id="top-controls" aria-label="Scrapbook pages">
+        <button class="nav-button previous" id="top-previous-button" type="button" aria-label="Previous page">
+          <span aria-hidden="true">←</span> Previous
+        </button>
+        <p class="top-page-count" id="top-page-count" aria-live="polite"></p>
+        <button class="nav-button next" id="top-next-button" type="button" aria-label="Next page">
+          Next page <span aria-hidden="true">→</span>
+        </button>
+      </nav>
+
+      <section class="album" id="album" aria-label="Photo scrapbook">
+        <div class="tape tape-left" aria-hidden="true"></div>
+        <div class="tape tape-right" aria-hidden="true"></div>
+        <div class="album-page" id="album-page">
+          <div class="cover-content" id="cover-content" hidden>
+            <p class="cover-sparkle" aria-hidden="true">✦ &nbsp; ♡ &nbsp; ✦</p>
+            <p class="cover-kicker">A little book of us</p>
+            <h2>Our Little Scrapbook</h2>
+            <p class="cover-dedication">A year of dates, smiles, and all the little moments that became our favorite memories.</p>
+            <button class="open-book-button" id="open-book-button" type="button">
+              Open our story <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div id="chapter-content">
+            <div class="chapter-heading">
+              <h2 id="chapter-title"></h2>
+              <p class="chapter-count" id="chapter-count"></p>
+            </div>
+
+            <section class="chapter-story" id="chapter-story" hidden aria-labelledby="chapter-title"></section>
+            <div class="photo-grid" id="photo-grid" aria-label="Photos in this chapter"></div>
+            <section class="future-note" id="future-note" hidden aria-labelledby="future-note-title">
+              <div class="future-note-hearts" aria-hidden="true">
+                <span>♡</span>
+                <span class="future-note-heart-main">♥</span>
+                <span>♡</span>
+              </div>
+              <h3 id="future-note-title">I love you</h3>
+              <h4>There is still so much ahead of us</h4>
+              <p>I can’t wait for all the places we’ll go, the little routines we’ll make, and the memories we haven’t even imagined yet.</p>
+            </section>
+
+            <div class="album-footer">
+              <p class="photo-count" id="photo-count" aria-live="polite"></p>
+              <div
+                class="progress-track"
+                id="progress-track"
+                role="progressbar"
+                aria-label="Scrapbook page progress"
+                aria-valuemin="1"
+                aria-valuemax="7"
+                aria-valuenow="1"
+              >
+                <span id="progress-fill"></span>
+              </div>
+              <p class="hint" id="photo-hint">Take your time. Choose a photo to see it up close.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="controls" id="bottom-controls" aria-label="Scrapbook pages">
+        <button class="nav-button previous" id="previous-button" type="button" aria-label="Previous page">
+          <span aria-hidden="true">←</span> Previous
+        </button>
+        <button class="nav-button next" id="next-button" type="button" aria-label="Next page">
+          Next page <span aria-hidden="true">→</span>
+        </button>
+      </nav>
+
+      <p class="loading-message" id="loading-message" role="status"></p>
+    </main>
+
+    <dialog class="photo-dialog" id="photo-dialog" aria-label="Enlarged scrapbook photo">
+      <form method="dialog">
+        <button class="close-button" type="submit" aria-label="Close enlarged photo">×</button>
+      </form>
+      <figure>
+        <img id="enlarged-photo" alt="">
+        <figcaption id="dialog-caption"></figcaption>
+      </figure>
+    </dialog>
+
+    <audio
+      id="scrapbook-music"
+      src="Hold%20me%2C%20never%20let%20go%20-%20Rocco%20(Lyrics%20Video).mp3"
+      autoplay
+      loop
+      preload="auto"
+    ></audio>
+  </body>
+</html>
